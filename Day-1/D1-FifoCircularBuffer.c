@@ -5,7 +5,7 @@ struct buffer{
     uint8_t data[fifo_size];
     uint8_t head;
     uint8_t tail;
-};5
+};
 int fifo_push(struct buffer *fifo){
     int num;
     printf("Enter number of data to push:");
@@ -43,3 +43,4 @@ int main(){
     fifo_pop(&fifo); 
     return 0;
 }
+
