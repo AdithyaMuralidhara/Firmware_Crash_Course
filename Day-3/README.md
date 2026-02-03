@@ -82,3 +82,8 @@ Any variable shared between the main loop and an ISR must be declared `volatile`
 ### 3. NVIC vs. Peripheral Enable
 
 Enabling the EXTI (Peripheral) is not enough. We must also enable the specific IRQ channel in the NVIC (Core). Both switches must be "ON" for the interrupt to fire.
+
+
+## Edit: NOTE:
+1. The ISR Name is FIXED: Defined in the startup file (e.g., DMA1_Channel5_IRQHandler). We cannot rename this.
+2. It is called after a trigger, such as when a button is pressed in the PA0 port here. 
