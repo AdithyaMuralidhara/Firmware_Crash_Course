@@ -93,3 +93,17 @@ Configuring the DMA is not enough. We must also tell the UART to send requests t
 4. **UART Configuration:** Set to 115200 baud. The `DMAR` bit is set to link the UART RX event to the DMA controller.
 5. **Main Loop:** The `while(1)` loop is intentionally empty. The data transfer happens entirely in hardware.
 6. **Interrupt Handler:** The function `DMA1_Channel5_IRQHandler` runs only when 16 bytes have been received. It clears the completion flag to prepare for the next interrupt.
+
+
+
+## Edit: NOTE
+
+1. The ISR Name is FIXED: Defined in the startup file (e.g., DMA1_Channel5_IRQHandler). We cannot rename this.
+
+2. The Hardware Route is FIXED: USART1_RX is hard-wired to DMA1 Channel 5. We cannot swap this to Channel 4. We must check the DMA Request Mapping Table in the Reference Manual to know which channel to use.
+
+3. The Trigger Condition is CONFIGURABLE: Even though the channel is fixed, We can choose when to interrupt.
+
+Do we want an interrupt when it's completely done? (Set TCIE)
+
+Do we want an interrupt when it's half done? (Set HTIE)
