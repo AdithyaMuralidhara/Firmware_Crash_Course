@@ -25,3 +25,10 @@ The Why: It prevents the "Apple SSL Bug" (goto fail), where a stray line of code
 `5. No Assignments in Loop/If Expressions (Rule 13.4)`
 The Rule: You cannot do if (a = b).
 The Why: It is far too easy to type = (assignment) when we meant == (comparison). MISRA forces us to separate the logic.
+
+`6.All "if-else if" chains must end with an "else" (Rule 15.7)`
+The Rule: Every if ... else if sequence must have a final else statement, even if it’s just a comment like /* Else not reached */.
+
+`7. No Function Pointers (Rule 11.1 / 11.6)`
+The Rule: Avoid using pointers to functions unless necessary.
+The Why: If a function pointer gets corrupted, the CPU could jump to a random memory address and start executing garbage code.
