@@ -5,7 +5,9 @@ On day 1 of the 30-day bootcamp for firmware development and getting up to speed
 ## Bit Manipulation: 
 
 Set Bit: REG |= (1<<5)  //Set 5th Bit only
+
 Clear Bit: REG &= ~(1<<5)  //Clear 5th Bit only
+
 Toggle Bit: REG ^= (1<<5)   //Toggle 5th Bit only
 
 
